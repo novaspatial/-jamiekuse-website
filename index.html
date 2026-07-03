@@ -51,10 +51,10 @@
 <style>
   :root {
     --bg: #0a0a0b;
-    --line: rgba(232, 230, 225, 0.10);
-    --text: #e8e6e1;
-    --dim: #9c9992;
-    --faint: #6a675f;
+    --line: rgba(232, 230, 225, 0.14);
+    --text: #eceae5;
+    --dim: #b0ada6;
+    --faint: #8d897f;
     --accent: #d8cfba;
     --serif: "Fraunces", Georgia, serif;
     --sans: "Inter", -apple-system, sans-serif;
@@ -126,7 +126,12 @@
   section { border-top: 1px solid var(--line); padding: 72px 0; }
   h2 {
     font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase;
-    color: var(--faint); font-weight: 400; margin-bottom: 40px;
+    color: var(--accent); font-weight: 500; margin-bottom: 40px;
+  }
+  h2::after {
+    content: ''; display: inline-block; vertical-align: middle;
+    width: 36px; height: 1px; background: var(--accent);
+    opacity: 0.4; margin-left: 14px;
   }
 
   /* Highlights */
@@ -175,7 +180,7 @@
     filter: grayscale(1) contrast(1.02) brightness(0.94);
   }
   .portrait figcaption {
-    font-size: 11.5px; color: var(--faint); margin-top: 10px;
+    font-size: 11.5px; color: var(--dim); margin-top: 10px;
     letter-spacing: 0.12em; text-transform: uppercase;
   }
   @media (max-width: 640px) {
