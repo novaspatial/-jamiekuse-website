@@ -56,6 +56,8 @@
     --dim: #b0ada6;
     --faint: #8d897f;
     --accent: #d8cfba;
+    --gold: #d6b06c;
+    --gold-bright: #e2c288;
     --serif: "Fraunces", Georgia, serif;
     --sans: "Inter", -apple-system, sans-serif;
   }
@@ -121,6 +123,12 @@
     max-width: 46ch;
   }
   .sub strong { color: var(--text); font-weight: 400; }
+  .sub-link {
+    color: var(--text); font-weight: 400; text-decoration: none;
+    border-bottom: 1px solid rgba(214, 176, 108, 0.45);
+    transition: color 0.25s, border-color 0.25s;
+  }
+  .sub-link:hover { color: var(--gold-bright); border-color: var(--gold); }
   .hero-links { margin-top: 44px; display: flex; gap: 28px; flex-wrap: wrap; }
   .hero-links a {
     font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase;
@@ -128,7 +136,7 @@
     padding-bottom: 4px; border-bottom: 1px solid var(--line);
     transition: border-color 0.25s, color 0.25s;
   }
-  .hero-links a:hover { border-color: var(--accent); color: #fff; }
+  .hero-links a:hover { border-color: var(--gold); color: var(--gold-bright); }
 
   /* ---------- Sections ---------- */
   section { border-top: 1px solid var(--line); padding: 72px 0; }
@@ -138,8 +146,8 @@
   }
   h2::after {
     content: ''; display: inline-block; vertical-align: middle;
-    width: 36px; height: 1px; background: var(--accent);
-    opacity: 0.4; margin-left: 14px;
+    width: 36px; height: 1px; background: var(--gold);
+    opacity: 0.55; margin-left: 14px;
   }
 
   /* Highlights */
@@ -152,49 +160,56 @@
   }
   .item:last-child { margin-bottom: 0; }
   a.item:hover {
-    border-color: rgba(216, 207, 186, 0.38);
+    border-color: rgba(214, 176, 108, 0.42);
     background: rgba(232, 230, 225, 0.05);
     transform: translateY(-2px);
   }
-  .item .year {
-    flex: 0 0 48px; font-size: 13px; color: var(--faint);
-    padding-top: 3px; font-variant-numeric: tabular-nums;
-  }
   .item .thumb {
-    flex: 0 0 64px; height: 64px; display: flex; align-items: center; justify-content: center;
+    flex: 0 0 76px; height: 76px;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(232, 230, 225, 0.045);
+    border: 1px solid var(--line); border-radius: 6px;
+    overflow: hidden;
   }
-  .item .thumb img.art { width: 64px; height: 64px; object-fit: cover; border-radius: 3px; border: 1px solid var(--line); }
-  .item .thumb img.mark { max-width: 64px; max-height: 40px; }
-  .item .thumb img.mark.tall { max-height: 64px; }
+  .item .thumb img.art { width: 100%; height: 100%; object-fit: cover; }
+  .item .thumb img.mark { max-width: 68%; max-height: 56%; }
+  .item .thumb img.mark.tall { max-height: 78%; }
+  .item .eyebrow {
+    font-size: 10.5px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--faint); margin-bottom: 7px; font-weight: 400;
+  }
+  .item .eyebrow b { color: var(--accent); font-weight: 500; }
+  .item .roles {
+    font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--faint); margin-top: 3px;
+  }
+  .award-badge {
+    display: inline-flex; align-items: center; gap: 9px;
+    margin-top: 14px; padding: 6px 14px 6px 11px;
+    border-radius: 4px;
+    font-size: 10.5px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 500;
+  }
+  .award-badge img { height: 17px; width: auto; display: block; }
+  .award-badge.win {
+    color: #e2c288;
+    border: 1px solid rgba(214, 176, 108, 0.45);
+    background: linear-gradient(180deg, rgba(214, 176, 108, 0.12), rgba(214, 176, 108, 0.04));
+  }
+  .award-badge.nom {
+    color: #e2c288;
+    border: 1px solid rgba(214, 176, 108, 0.45);
+    background: linear-gradient(180deg, rgba(214, 176, 108, 0.12), rgba(214, 176, 108, 0.04));
+  }
   .item .what h3 {
     font-family: var(--serif); font-weight: 400; font-size: 21px;
     line-height: 1.3; letter-spacing: 0.005em;
-  }
-  .item .what .badge {
-    display: inline-flex; align-items: center; gap: 8px;
-    font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
-    color: var(--accent); font-weight: 500;
-    background: rgba(216, 207, 186, 0.07);
-    border: 1px solid rgba(216, 207, 186, 0.30);
-    border-radius: 999px;
-    padding: 5px 14px 5px 12px; margin-top: 11px;
-    transition: border-color 0.3s, background 0.3s, box-shadow 0.3s;
-  }
-  .item:hover .badge {
-    border-color: rgba(216, 207, 186, 0.55);
-    background: rgba(216, 207, 186, 0.11);
-    box-shadow: 0 0 18px rgba(216, 207, 186, 0.10);
   }
   a.item { text-decoration: none; color: inherit; }
   a.item h3 .ext {
     color: var(--faint); font-size: 15px; margin-left: 9px;
     display: inline-block; transition: color 0.25s, transform 0.25s;
   }
-  a.item:hover h3 .ext { color: var(--accent); transform: translate(2px, -2px); }
-  .item .what .badge::before {
-    content: ''; width: 5px; height: 5px; flex: none;
-    background: var(--accent); transform: rotate(45deg);
-  }
+  a.item:hover h3 .ext { color: var(--gold-bright); transform: translate(2px, -2px); }
   .item .what p { font-size: 14.5px; color: var(--dim); margin-top: 8px; max-width: 52ch; }
 
   /* Bio */
@@ -234,7 +249,7 @@
   }
   .venture:last-child { margin-bottom: 0; }
   .venture:hover {
-    border-color: rgba(216, 207, 186, 0.38);
+    border-color: rgba(214, 176, 108, 0.42);
     background: rgba(232, 230, 225, 0.05);
     transform: translateY(-2px);
   }
@@ -255,7 +270,7 @@
   }
   .venture .name span { font-size: 14px; color: var(--faint); font-family: var(--sans); }
   .venture p { font-size: 14.5px; color: var(--dim); margin-top: 6px; max-width: 54ch; }
-  .venture .arrow { color: var(--accent); }
+  .venture .arrow { color: var(--gold); }
 
   /* Contact */
   .contact a.email {
@@ -264,7 +279,7 @@
     border-bottom: 1px solid var(--line);
     transition: border-color 0.25s, color 0.25s;
   }
-  .contact a.email:hover { border-color: var(--accent); color: #fff; }
+  .contact a.email:hover { border-color: var(--gold); color: var(--gold-bright); }
   .contact-lede { font-size: 16px; color: var(--text); margin-bottom: 16px; }
   .services { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 34px; }
   .chip {
@@ -283,7 +298,7 @@
     padding: 12px 14px; outline: none; resize: vertical;
     transition: border-color 0.2s;
   }
-  .cform input:focus, .cform textarea:focus { border-color: var(--accent); }
+  .cform input:focus, .cform textarea:focus { border-color: var(--gold); }
   .cform input::placeholder, .cform textarea::placeholder { color: var(--faint); }
   .cform button {
     align-self: flex-start; cursor: pointer;
@@ -292,7 +307,7 @@
     padding: 12px 26px; margin-top: 4px;
     transition: background 0.2s;
   }
-  .cform button:hover { background: #fff; }
+  .cform button:hover { background: var(--gold-bright); }
   @media (max-width: 520px) { .cform .row { flex-direction: column; } }
 
   footer {
@@ -302,12 +317,14 @@
     display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
   }
   footer a { color: var(--dim); text-decoration: none; }
-  footer a:hover { color: var(--accent); }
+  footer a:hover { color: var(--gold-bright); }
 
   @media (max-width: 560px) {
     header { min-height: 76vh; }
-    .item { flex-direction: column; gap: 6px; }
-    .item .year { flex: none; }
+    .item { gap: 16px; padding: 18px 18px; }
+    .item .thumb { flex: 0 0 56px; height: 56px; border-radius: 5px; }
+    .item .what h3 { font-size: 18px; }
+    .item .what p { font-size: 14px; }
   }
 </style>
 </head>
@@ -319,13 +336,13 @@
     <div class="hero-card">
     <p class="kicker">Audio Engineer &amp; Producer — Vancouver, Canada</p>
     <h1 class="wordmark"><img src="jamie-kuse-logo-web.png" alt="Jamie Kuse" onerror="this.parentNode.classList.add('no-img'); this.parentNode.innerHTML='Jamie<br>Kuse';"></h1>
-    <p class="sub">Multiple Juno Award–winning engineer and producer with over two decades of industry experience. Co-founder of the Emmy Award–winning <strong>NOVA Studios</strong>, one of Canada's premier Dolby Atmos facilities. <strong>1&nbsp;billion+</strong> streams worldwide.</p>
+    <p class="sub">Multiple Juno Award–winning engineer and producer with over two decades of industry experience. Co-founder of the Emmy Award–winning <a class="sub-link" href="https://novastudios.ca" target="_blank" rel="noopener">NOVA Studios</a>, one of Canada's premier Dolby Atmos facilities. <strong>1&nbsp;billion+</strong> streams worldwide.</p>
     <div class="cred">
       <div class="cred-item">
-        <img src="juno-statue.svg" alt="JUNO Awards" title="Multiple Juno Award winner" onerror="this.style.display='none'">
+        <img src="juno-statue-gold.svg" alt="JUNO Awards" title="Multiple Juno Award winner" onerror="this.style.display='none'">
       </div>
       <div class="cred-item">
-        <img src="emmy-logo.svg" alt="Emmy Awards" title="Co-founder of the Emmy Award–winning NOVA Studios" onerror="this.style.display='none'">
+        <img src="emmy-logo-gold.svg" alt="Emmy Awards" title="Co-founder of the Emmy Award–winning NOVA Studios" onerror="this.style.display='none'">
       </div>
     </div>
     <div class="hero-links">
@@ -339,57 +356,61 @@
     <h2>Highlights</h2>
     <p class="section-sub">Selected work across mixing, production, and sound design — from award-winning albums to global broadcast.</p>
     <a class="item" href="https://www.instagram.com/reel/DZcyomZSvpZ/" target="_blank" rel="noopener">
-      <div class="year">2026</div>
       <div class="thumb"><img class="mark" src="fifa-logo.svg" alt="FIFA" onerror="this.style.display='none'"></div>
       <div class="what">
+        <p class="eyebrow"><b>2026</b> — Broadcast &amp; Live Events</p>
         <h3>Canada × FIFA — World Cup 26<span class="ext">↗</span></h3>
+        <p class="roles">Composer · Mixer</p>
         <p>Official Canada × FIFA music for broadcast and live events at the 2026 FIFA World Cup.</p>
-        <span class="badge">Official Broadcast &amp; Live Event Music</span>
       </div>
     </a>
     <a class="item" href="https://music.apple.com/ca/album/nakota-tayhunyabi/1841257968" target="_blank" rel="noopener">
-      <div class="year">2026</div>
       <div class="thumb"><img class="mark tall" src="juno-statue.svg" alt="JUNO Awards" onerror="this.style.display='none'"></div>
       <div class="what">
+        <p class="eyebrow"><b>2026</b> — Album · Dolby Atmos</p>
         <h3>Nakota Tayhunyabi — YB Nakota<span class="ext">↗</span></h3>
+        <p class="roles">Mixer · Atmos · Mastering</p>
         <p>The first Indigenous language preservation and ceremony album ever captured in Dolby Atmos — recorded, mixed, and produced at NOVA Studios.</p>
-        <span class="badge">Juno Award Nominee, 2026</span>
+        <span class="award-badge nom"><img src="juno-statue-gold.svg" alt="">Juno Award Nominee, 2026</span>
       </div>
     </a>
     <a class="item" href="https://open.spotify.com/album/7445IRz5iyAR4DLwkZJD5a" target="_blank" rel="noopener">
-      <div class="year">2025</div>
       <div class="thumb"><img class="art" src="redfuture-thumb.jpg" alt="Red Future album cover" onerror="this.style.display='none'"></div>
       <div class="what">
+        <p class="eyebrow"><b>2025</b> — Album</p>
         <h3>Red Future — Snotty Nose Rez Kids<span class="ext">↗</span></h3>
+        <p class="roles">Mixer · Producer · Engineer</p>
         <p>Recording and mix engineer, and producer on tracks including the title track "RED FUTURE" — with collaborations from Jeremy Dutcher, Tia Wood, Sebastian Gaskin, Drezus, and Aysanabee.</p>
-        <span class="badge">Juno Award — Rap Album of the Year, 2025</span>
+        <span class="award-badge win"><img src="juno-statue-gold.svg" alt="">Juno Award Winner — Rap Album of the Year</span>
       </div>
     </a>
     <div class="item">
-      <div class="year">2023</div>
       <div class="thumb"><img class="mark tall" src="emmy-logo.svg" alt="Sports Emmy Awards" onerror="this.style.display='none'"></div>
       <div class="what">
+        <p class="eyebrow"><b>2023</b> — Global Broadcast</p>
         <h3>The International — Dota 2 × Valve</h3>
+        <p class="roles">Composer · Mixer</p>
         <p>With partner Mike Southworth, led production and music for Valve's Sports Emmy–nominated global broadcast — continuing the NOVA Studios program whose International coverage won the Sports Emmy the year prior.</p>
-        <span class="badge">Sports Emmy Nominee — Esports Championship Coverage</span>
+        <span class="award-badge nom"><img src="emmy-logo-gold.svg" alt="">Sports Emmy Nominee — Championship Coverage</span>
       </div>
     </div>
     <a class="item" href="https://vimeo.com/1119238908" target="_blank" rel="noopener">
-      <div class="year">2025</div>
       <div class="thumb"><img class="art" src="porsche-thumb.jpg" alt="Porsche Taycan commercial" onerror="this.style.display='none'"></div>
       <div class="what">
+        <p class="eyebrow"><b>2025</b> — Commercial</p>
         <h3>Porsche Taycan — Luxury Campaign<span class="ext">↗</span></h3>
+        <p class="roles">Sound Designer</p>
         <p>Sound design for the acclaimed Porsche Taycan spot, delivered through NOVA Post.</p>
-        <span class="badge">Commercial Sound Design</span>
       </div>
     </a>
     <div class="item">
-      <div class="year">2017</div>
       <div class="thumb"><img class="mark" src="netflix-logo.svg" alt="Netflix" onerror="this.style.display='none'"></div>
       <div class="what">
+        <p class="eyebrow"><b>2017</b> — Television</p>
         <h3>Riverdale — Netflix</h3>
-        <p>Lead soundtrack engineer for Seasons 1 &amp; 2 of the hit series.</p>
-        <span class="badge">Netflix Original Series</span>
+        <p class="roles">Engineer · Vocal Producer</p>
+        <p>Lead soundtrack engineer for Seasons 1 &amp; 2 of the hit series — soundtrack recordings amassed hundreds of millions of streams and topped Spotify charts.</p>
+        <span class="award-badge win">Teen Choice Award Winner — Choice Drama Series, 2017 &amp; 2018</span>
       </div>
     </div>
   </section>
