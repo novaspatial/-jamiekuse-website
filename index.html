@@ -26,7 +26,7 @@
   "name": "Jamie Kuse",
   "url": "https://www.jamiekuse.com/",
   "jobTitle": "Audio Engineer & Producer",
-  "email": "jamiekuse@gmail.com",
+  "email": "contact@jamiekuse.com",
   "description": "Multiple Juno Award-winning audio engineer and producer; co-founder of the Emmy Award-winning NOVA Studios, one of Canada's premier Dolby Atmos facilities. Productions have amassed over 1 billion streams worldwide.",
   "knowsAbout": ["Dolby Atmos", "spatial audio", "music production", "audio engineering", "immersive audio", "Indigenous music"],
   "image": "https://www.jamiekuse.com/jamie-portrait.jpg",
@@ -76,12 +76,24 @@
   /* ---------- Hero ---------- */
   header {
     min-height: 72vh;
-    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 48px 0 20px;
+  }
+  header + section { border-top: none; padding-top: 36px; }
+  .hero-card {
+    display: flex; flex-direction: column; align-items: center;
     text-align: center;
-    padding: 88px 0 56px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 80px 40px 68px;
+    background:
+      linear-gradient(180deg, rgba(10, 10, 11, 0.60) 0%, rgba(10, 10, 11, 0.82) 62%, rgba(10, 10, 11, 0.93) 100%),
+      url('hero-bg.jpg') center / cover no-repeat;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
   }
   .cred, .hero-links { justify-content: center; }
   .cred-item { text-align: left; }
+  @media (max-width: 560px) { .hero-card { padding: 56px 22px 48px; } }
   .kicker {
     font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase;
     color: var(--dim); margin-bottom: 28px; font-weight: 400;
@@ -101,13 +113,9 @@
   }
 
   /* ---------- Hero credibility strip ---------- */
-  .cred { display: flex; gap: 44px; margin-top: 40px; align-items: center; flex-wrap: wrap; }
-  .cred-item { display: flex; gap: 14px; align-items: center; }
-  .cred-item img { height: 42px; width: auto; display: block; opacity: 0.95; }
-  .cred-item span {
-    font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase;
-    color: var(--dim); line-height: 1.55; font-weight: 400;
-  }
+  .cred { display: flex; gap: 40px; margin-top: 38px; align-items: center; flex-wrap: wrap; }
+  .cred-item { display: flex; align-items: center; }
+  .cred-item img { height: 50px; width: auto; display: block; opacity: 0.88; }
   .sub {
     margin-top: 28px; font-size: 17px; color: var(--dim);
     max-width: 46ch;
@@ -135,8 +143,19 @@
   }
 
   /* Highlights */
-  .item { display: flex; gap: 24px; padding: 26px 0; border-bottom: 1px solid var(--line); align-items: flex-start; }
-  .item:last-child { border-bottom: none; }
+  .item {
+    display: flex; gap: 24px; align-items: flex-start;
+    padding: 24px 26px; margin-bottom: 14px;
+    border: 1px solid var(--line); border-radius: 8px;
+    background: rgba(232, 230, 225, 0.025);
+    transition: border-color 0.3s, background 0.3s, transform 0.3s;
+  }
+  .item:last-child { margin-bottom: 0; }
+  a.item:hover {
+    border-color: rgba(216, 207, 186, 0.38);
+    background: rgba(232, 230, 225, 0.05);
+    transform: translateY(-2px);
+  }
   .item .year {
     flex: 0 0 48px; font-size: 13px; color: var(--faint);
     padding-top: 3px; font-variant-numeric: tabular-nums;
@@ -208,9 +227,17 @@
   .venture {
     display: flex; gap: 32px; align-items: center;
     text-decoration: none; color: inherit;
-    padding: 34px 0; border-bottom: 1px solid var(--line);
+    padding: 26px 26px; margin-bottom: 14px;
+    border: 1px solid var(--line); border-radius: 8px;
+    background: rgba(232, 230, 225, 0.025);
+    transition: border-color 0.3s, background 0.3s, transform 0.3s;
   }
-  .venture:last-child { border-bottom: none; }
+  .venture:last-child { margin-bottom: 0; }
+  .venture:hover {
+    border-color: rgba(216, 207, 186, 0.38);
+    background: rgba(232, 230, 225, 0.05);
+    transform: translateY(-2px);
+  }
   .venture .vimg { flex: 0 0 250px; overflow: hidden; border-radius: 4px; border: 1px solid var(--line); }
   .venture .vimg img {
     width: 100%; aspect-ratio: 16 / 10; object-fit: cover; display: block;
@@ -289,27 +316,28 @@
 <div class="wrap">
 
   <header>
+    <div class="hero-card">
     <p class="kicker">Audio Engineer &amp; Producer — Vancouver, Canada</p>
     <h1 class="wordmark"><img src="jamie-kuse-logo-web.png" alt="Jamie Kuse" onerror="this.parentNode.classList.add('no-img'); this.parentNode.innerHTML='Jamie<br>Kuse';"></h1>
     <p class="sub">Multiple Juno Award–winning engineer and producer with over two decades of industry experience. Co-founder of the Emmy Award–winning <strong>NOVA Studios</strong>, one of Canada's premier Dolby Atmos facilities. <strong>1&nbsp;billion+</strong> streams worldwide.</p>
     <div class="cred">
       <div class="cred-item">
-        <img src="juno-statue.svg" alt="JUNO Awards" onerror="this.style.display='none'">
-        <span>Multiple Juno<br>Award Winner</span>
+        <img src="juno-statue.svg" alt="JUNO Awards" title="Multiple Juno Award winner" onerror="this.style.display='none'">
       </div>
       <div class="cred-item">
-        <img src="emmy-logo.svg" alt="Emmy Awards" onerror="this.style.display='none'">
-        <span>Emmy Award–Winning<br>Studio — Co-Founder</span>
+        <img src="emmy-logo.svg" alt="Emmy Awards" title="Co-founder of the Emmy Award–winning NOVA Studios" onerror="this.style.display='none'">
       </div>
     </div>
     <div class="hero-links">
       <a href="#work">Highlights</a>
       <a href="#contact">Contact</a>
     </div>
+    </div>
   </header>
 
   <section id="work">
     <h2>Highlights</h2>
+    <p class="section-sub">Selected work across mixing, production, and sound design — from award-winning albums to global broadcast.</p>
     <a class="item" href="https://www.instagram.com/reel/DZcyomZSvpZ/" target="_blank" rel="noopener">
       <div class="year">2026</div>
       <div class="thumb"><img class="mark" src="fifa-logo.svg" alt="FIFA" onerror="this.style.display='none'"></div>
@@ -422,7 +450,7 @@
       <span class="chip">Dolby Atmos</span>
       <span class="chip">Production</span>
     </div>
-    <a class="email" href="mailto:jamiekuse@gmail.com">jamiekuse@gmail.com</a>
+    <a class="email" href="mailto:contact@jamiekuse.com">contact@jamiekuse.com</a>
     <form class="cform" action="https://formsubmit.co/jamiekuse@gmail.com" method="POST">
       <input type="hidden" name="_subject" value="Inquiry via jamiekuse.com">
       <input type="text" name="_honey" style="display:none">
