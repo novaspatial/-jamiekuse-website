@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Jamie Kuse — Audio Engineer & Producer</title>
-<meta name="description" content="Jamie Kuse is a multiple Juno Award-winning audio engineer and producer, and co-founder of the Emmy Award-winning NOVA Studios — one of Canada's premier Dolby Atmos facilities. 750M+ streams worldwide.">
+<meta name="description" content="Jamie Kuse is a multiple Juno Award-winning audio engineer and producer, and co-founder of the Emmy Award-winning NOVA Studios — one of Canada's premier Dolby Atmos facilities. 1 billion+ streams worldwide.">
 <link rel="canonical" href="https://www.jamiekuse.com/">
 <meta property="og:site_name" content="Jamie Kuse">
 <meta property="og:title" content="Jamie Kuse — Audio Engineer & Producer">
@@ -27,7 +27,7 @@
   "url": "https://www.jamiekuse.com/",
   "jobTitle": "Audio Engineer & Producer",
   "email": "jamiekuse@gmail.com",
-  "description": "Multiple Juno Award-winning audio engineer and producer; co-founder of the Emmy Award-winning NOVA Studios, one of Canada's premier Dolby Atmos facilities. Productions have amassed over 750 million streams worldwide.",
+  "description": "Multiple Juno Award-winning audio engineer and producer; co-founder of the Emmy Award-winning NOVA Studios, one of Canada's premier Dolby Atmos facilities. Productions have amassed over 1 billion streams worldwide.",
   "knowsAbout": ["Dolby Atmos", "spatial audio", "music production", "audio engineering", "immersive audio", "Indigenous music"],
   "image": "https://www.jamiekuse.com/jamie-portrait.jpg",
   "award": [
@@ -37,12 +37,12 @@
     "2026 Juno nomination — Nakota Tayhunyabi, YB Nakota",
     "Co-founder of Sports Emmy–winning NOVA Studios"
   ],
-  "founder": {
-    "@type": "Organization",
-    "name": "NOVA Studios",
-    "url": "https://nova-spatial.com"
-  },
-  "sameAs": ["https://nova-spatial.com", "https://www.ipproject.ca"]
+  "founder": [
+    { "@type": "Organization", "name": "NOVA Studios", "url": "https://novastudios.ca" },
+    { "@type": "Organization", "name": "NOVA Post", "url": "https://novapost.ca" },
+    { "@type": "Organization", "name": "The Immersive Preservation Project", "url": "https://www.ipproject.ca" }
+  ],
+  "sameAs": ["https://novastudios.ca", "https://novapost.ca", "https://nova-spatial.com", "https://www.ipproject.ca"]
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -75,10 +75,10 @@
 
   /* ---------- Hero ---------- */
   header {
-    min-height: 88vh;
+    min-height: 72vh;
     display: flex; flex-direction: column; justify-content: center; align-items: center;
     text-align: center;
-    padding: 96px 0 64px;
+    padding: 88px 0 56px;
   }
   .cred, .hero-links { justify-content: center; }
   .cred-item { text-align: left; }
@@ -125,7 +125,7 @@
   /* ---------- Sections ---------- */
   section { border-top: 1px solid var(--line); padding: 72px 0; }
   h2 {
-    font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase;
+    font-size: 14px; letter-spacing: 0.22em; text-transform: uppercase;
     color: var(--accent); font-weight: 500; margin-bottom: 40px;
   }
   h2::after {
@@ -159,7 +159,19 @@
     border: 1px solid rgba(216, 207, 186, 0.30);
     border-radius: 999px;
     padding: 5px 14px 5px 12px; margin-top: 11px;
+    transition: border-color 0.3s, background 0.3s, box-shadow 0.3s;
   }
+  .item:hover .badge {
+    border-color: rgba(216, 207, 186, 0.55);
+    background: rgba(216, 207, 186, 0.11);
+    box-shadow: 0 0 18px rgba(216, 207, 186, 0.10);
+  }
+  a.item { text-decoration: none; color: inherit; }
+  a.item h3 .ext {
+    color: var(--faint); font-size: 15px; margin-left: 9px;
+    display: inline-block; transition: color 0.25s, transform 0.25s;
+  }
+  a.item:hover h3 .ext { color: var(--accent); transform: translate(2px, -2px); }
   .item .what .badge::before {
     content: ''; width: 5px; height: 5px; flex: none;
     background: var(--accent); transform: rotate(45deg);
@@ -189,6 +201,10 @@
   }
 
   /* Ventures */
+  .section-sub {
+    font-size: 15px; color: var(--dim); max-width: 54ch;
+    margin: -24px 0 16px;
+  }
   .venture {
     display: flex; gap: 32px; align-items: center;
     text-decoration: none; color: inherit;
@@ -222,7 +238,35 @@
     transition: border-color 0.25s, color 0.25s;
   }
   .contact a.email:hover { border-color: var(--accent); color: #fff; }
-  .contact p { font-size: 14px; color: var(--faint); margin-top: 18px; }
+  .contact-lede { font-size: 16px; color: var(--text); margin-bottom: 16px; }
+  .services { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 34px; }
+  .chip {
+    font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--accent); font-weight: 500;
+    background: rgba(216, 207, 186, 0.07);
+    border: 1px solid rgba(216, 207, 186, 0.30);
+    border-radius: 999px; padding: 5px 14px;
+  }
+  .cform { margin-top: 40px; max-width: 520px; display: flex; flex-direction: column; gap: 12px; }
+  .cform .row { display: flex; gap: 12px; }
+  .cform input, .cform textarea {
+    width: 100%; background: rgba(232, 230, 225, 0.04);
+    border: 1px solid var(--line); border-radius: 3px;
+    color: var(--text); font-family: var(--sans); font-size: 14.5px; font-weight: 300;
+    padding: 12px 14px; outline: none; resize: vertical;
+    transition: border-color 0.2s;
+  }
+  .cform input:focus, .cform textarea:focus { border-color: var(--accent); }
+  .cform input::placeholder, .cform textarea::placeholder { color: var(--faint); }
+  .cform button {
+    align-self: flex-start; cursor: pointer;
+    font-family: var(--sans); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600;
+    color: #131210; background: var(--accent); border: none; border-radius: 2px;
+    padding: 12px 26px; margin-top: 4px;
+    transition: background 0.2s;
+  }
+  .cform button:hover { background: #fff; }
+  @media (max-width: 520px) { .cform .row { flex-direction: column; } }
 
   footer {
     border-top: 1px solid var(--line);
@@ -247,7 +291,7 @@
   <header>
     <p class="kicker">Audio Engineer &amp; Producer — Vancouver, Canada</p>
     <h1 class="wordmark"><img src="jamie-kuse-logo-web.png" alt="Jamie Kuse" onerror="this.parentNode.classList.add('no-img'); this.parentNode.innerHTML='Jamie<br>Kuse';"></h1>
-    <p class="sub">Multiple Juno Award–winning engineer and producer with twenty years behind the console. Co-founder of the Emmy Award–winning <strong>NOVA Studios</strong>, one of Canada's premier Dolby Atmos facilities. <strong>750&nbsp;million+</strong> streams worldwide.</p>
+    <p class="sub">Multiple Juno Award–winning engineer and producer with over two decades of industry experience. Co-founder of the Emmy Award–winning <strong>NOVA Studios</strong>, one of Canada's premier Dolby Atmos facilities. <strong>1&nbsp;billion+</strong> streams worldwide.</p>
     <div class="cred">
       <div class="cred-item">
         <img src="juno-statue.svg" alt="JUNO Awards" onerror="this.style.display='none'">
@@ -259,40 +303,40 @@
       </div>
     </div>
     <div class="hero-links">
-      <a href="#work">Selected Work</a>
+      <a href="#work">Highlights</a>
       <a href="#contact">Contact</a>
     </div>
   </header>
 
   <section id="work">
-    <h2>Selected Work</h2>
-    <div class="item">
+    <h2>Highlights</h2>
+    <a class="item" href="https://www.instagram.com/reel/DZcyomZSvpZ/" target="_blank" rel="noopener">
       <div class="year">2026</div>
       <div class="thumb"><img class="mark" src="fifa-logo.svg" alt="FIFA" onerror="this.style.display='none'"></div>
       <div class="what">
-        <h3>Canada × FIFA — World Cup 26</h3>
+        <h3>Canada × FIFA — World Cup 26<span class="ext">↗</span></h3>
         <p>Official Canada × FIFA music for broadcast and live events at the 2026 FIFA World Cup.</p>
         <span class="badge">Official Broadcast &amp; Live Event Music</span>
       </div>
-    </div>
-    <div class="item">
+    </a>
+    <a class="item" href="https://music.apple.com/ca/album/nakota-tayhunyabi/1841257968" target="_blank" rel="noopener">
       <div class="year">2026</div>
       <div class="thumb"><img class="mark tall" src="juno-statue.svg" alt="JUNO Awards" onerror="this.style.display='none'"></div>
       <div class="what">
-        <h3>Nakota Tayhunyabi — YB Nakota</h3>
+        <h3>Nakota Tayhunyabi — YB Nakota<span class="ext">↗</span></h3>
         <p>The first Indigenous language preservation and ceremony album ever captured in Dolby Atmos — recorded, mixed, and produced at NOVA Studios.</p>
         <span class="badge">Juno Award Nominee, 2026</span>
       </div>
-    </div>
-    <div class="item">
+    </a>
+    <a class="item" href="https://open.spotify.com/album/7445IRz5iyAR4DLwkZJD5a" target="_blank" rel="noopener">
       <div class="year">2025</div>
       <div class="thumb"><img class="art" src="redfuture-thumb.jpg" alt="Red Future album cover" onerror="this.style.display='none'"></div>
       <div class="what">
-        <h3>Red Future — Snotty Nose Rez Kids</h3>
+        <h3>Red Future — Snotty Nose Rez Kids<span class="ext">↗</span></h3>
         <p>Recording and mix engineer, and producer on tracks including the title track "RED FUTURE" — with collaborations from Jeremy Dutcher, Tia Wood, Sebastian Gaskin, Drezus, and Aysanabee.</p>
         <span class="badge">Juno Award — Rap Album of the Year, 2025</span>
       </div>
-    </div>
+    </a>
     <div class="item">
       <div class="year">2023</div>
       <div class="thumb"><img class="mark tall" src="emmy-logo.svg" alt="Sports Emmy Awards" onerror="this.style.display='none'"></div>
@@ -302,6 +346,15 @@
         <span class="badge">Sports Emmy Nominee — Esports Championship Coverage</span>
       </div>
     </div>
+    <a class="item" href="https://vimeo.com/1119238908" target="_blank" rel="noopener">
+      <div class="year">2025</div>
+      <div class="thumb"><img class="art" src="porsche-thumb.jpg" alt="Porsche Taycan commercial" onerror="this.style.display='none'"></div>
+      <div class="what">
+        <h3>Porsche Taycan — Luxury Campaign<span class="ext">↗</span></h3>
+        <p>Sound design for the acclaimed Porsche Taycan spot, delivered through NOVA Post.</p>
+        <span class="badge">Commercial Sound Design</span>
+      </div>
+    </a>
     <div class="item">
       <div class="year">2017</div>
       <div class="thumb"><img class="mark" src="netflix-logo.svg" alt="Netflix" onerror="this.style.display='none'"></div>
@@ -317,8 +370,8 @@
     <h2>About</h2>
     <div class="about-grid">
       <div class="bio">
-        <p>Jamie Kuse is an audio engineer and producer with twenty years behind the console. His work spans commercial releases, global broadcast, and live events — from Juno Award–winning albums to the world stage of FIFA and Valve's The International — with productions amassing over 750 million streams worldwide.</p>
-        <p>He is the co-founder of the Emmy Award–winning <strong>NOVA Studios</strong>, one of Canada's premier Dolby Atmos facilities, and of <em>The Immersive Preservation Project</em> — future-proofing language and culture through archive-grade immersive recording.</p>
+        <p>Jamie Kuse is an audio engineer and producer with over two decades of industry experience. His work spans commercial releases, global broadcast, and live events — from Juno Award–winning albums to the world stage of FIFA and Valve's The International — with productions amassing over 1 billion streams worldwide.</p>
+        <p>He is the co-founder of the Emmy Award–winning <strong>NOVA Studios</strong>, one of Canada's premier Dolby Atmos facilities; <strong>NOVA Post</strong>, whose client roster spans Google, Nintendo, Valve, and Porsche; and <em>The Immersive Preservation Project</em> — future-proofing language and culture through archive-grade immersive recording.</p>
       </div>
       <figure class="portrait">
         <img src="jamie-portrait.jpg" loading="lazy" alt="Jamie Kuse at NOVA Studios" onerror="this.parentNode.style.display='none'">
@@ -329,11 +382,26 @@
 
   <section id="ventures">
     <h2>Ventures</h2>
-    <a class="venture" href="https://nova-spatial.com" target="_blank" rel="noopener">
+    <p class="section-sub">Co-founder of a family of companies spanning the audio industry — from recording to post-production to immersive archives.</p>
+    <a class="venture" href="https://novastudios.ca" target="_blank" rel="noopener">
       <div class="vimg"><img src="nova-wide.jpg" loading="lazy" alt="NOVA Studios — Dolby Atmos control room" onerror="this.parentNode.style.display='none'"></div>
       <div class="vbody">
-        <div class="name">NOVA Studios <span>nova-spatial.com</span> <span class="arrow">→</span></div>
-        <p>Co-founder of the Emmy Award–winning studio — one of Canada's premier Dolby Atmos facilities. Mixing, mastering, and immersive production for artists and labels across North America.</p>
+        <div class="name">NOVA Studios <span>novastudios.ca</span> <span class="arrow">→</span></div>
+        <p>The Emmy Award–winning recording facility — one of Canada's premier Dolby Atmos studios, serving artists and labels across North America.</p>
+      </div>
+    </a>
+    <a class="venture" href="https://novapost.ca" target="_blank" rel="noopener">
+      <div class="vimg"><img src="novapost-card.jpg" loading="lazy" alt="NOVA Post — post production" onerror="this.parentNode.style.display='none'"></div>
+      <div class="vbody">
+        <div class="name">NOVA Post <span>novapost.ca</span> <span class="arrow">→</span></div>
+        <p>Post-production for film, TV, and commercial — sound, picture, and colour. Clients include Google, Nintendo, Valve, Porsche, Range Rover, and Destination Canada.</p>
+      </div>
+    </a>
+    <a class="venture" href="https://nova-spatial.com" target="_blank" rel="noopener">
+      <div class="vimg"><img src="novaspatial-card.jpg" loading="lazy" alt="NOVA Spatial — immersive audio" onerror="this.parentNode.style.display='none'"></div>
+      <div class="vbody">
+        <div class="name">NOVA Spatial <span>nova-spatial.com</span> <span class="arrow">→</span></div>
+        <p>Industry leaders in immersive audio — Dolby Atmos mixing for artists and labels, bookable online today.</p>
       </div>
     </a>
     <a class="venture" href="https://www.ipproject.ca" target="_blank" rel="noopener">
@@ -347,13 +415,29 @@
 
   <section id="contact" class="contact">
     <h2>Contact</h2>
+    <p class="contact-lede">Available for select projects and partnerships:</p>
+    <div class="services">
+      <span class="chip">Mixing</span>
+      <span class="chip">Mastering</span>
+      <span class="chip">Dolby Atmos</span>
+      <span class="chip">Production</span>
+    </div>
     <a class="email" href="mailto:jamiekuse@gmail.com">jamiekuse@gmail.com</a>
-    <p>Production, mixing, Atmos, and partnership inquiries.</p>
+    <form class="cform" action="https://formsubmit.co/jamiekuse@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="Inquiry via jamiekuse.com">
+      <input type="text" name="_honey" style="display:none">
+      <div class="row">
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+      </div>
+      <textarea name="message" rows="4" placeholder="Tell me about your project…" required></textarea>
+      <button type="submit">Send Inquiry</button>
+    </form>
   </section>
 
   <footer>
     <div>© 2026 Jamie Kuse</div>
-    <div><a href="https://nova-spatial.com" target="_blank" rel="noopener">NOVA Studios</a> &nbsp;·&nbsp; <a href="https://www.ipproject.ca" target="_blank" rel="noopener">IPP</a></div>
+    <div><a href="https://novastudios.ca" target="_blank" rel="noopener">NOVA Studios</a> &nbsp;·&nbsp; <a href="https://novapost.ca" target="_blank" rel="noopener">NOVA Post</a> &nbsp;·&nbsp; <a href="https://nova-spatial.com" target="_blank" rel="noopener">NOVA Spatial</a> &nbsp;·&nbsp; <a href="https://www.ipproject.ca" target="_blank" rel="noopener">IPP</a></div>
   </footer>
 
 </div>
