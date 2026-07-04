@@ -109,6 +109,9 @@
   }
   h1.wordmark img {
     display: block; width: min(440px, 82vw); height: auto;
+    /* black-on-transparent logo → platinum, on dark bg */
+    filter: invert(1) brightness(0.91);
+    mix-blend-mode: screen;
   }
 
   /* ---------- Hero credibility strip ---------- */
@@ -332,7 +335,7 @@
   <header>
     <div class="hero-card">
     <p class="kicker">Audio Engineer &amp; Producer — Vancouver, Canada</p>
-    <h1 class="wordmark"><img src="jamie-kuse-logo-gold.png" alt="Jamie Kuse" onerror="this.parentNode.classList.add('no-img'); this.parentNode.innerHTML='Jamie<br>Kuse';"></h1>
+    <h1 class="wordmark"><img src="jamie-kuse-logo-web.png" alt="Jamie Kuse" onerror="this.parentNode.classList.add('no-img'); this.parentNode.innerHTML='Jamie<br>Kuse';"></h1>
     <p class="sub">Multiple Juno Award–winning engineer and producer with over two decades of industry experience. Co-founder of the Emmy Award–winning <a class="sub-link" href="https://novastudios.ca" target="_blank" rel="noopener">NOVA Studios</a>, one of Canada's premier Dolby Atmos facilities. <strong>1&nbsp;billion+</strong> streams worldwide.</p>
     <div class="cred">
       <div class="cred-item">
