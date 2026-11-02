@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jamie Kuse | Dolby Atmos Engineer &amp; Music Producer, Vancouver</title>
-<meta name="description" content="Jamie Kuse is a JUNO Award-winning producer and Dolby Atmos engineer in Vancouver, co-founder of NOVA Studios and The Immersive Preservation Project. 1 billion+ streams.">
+<title>Jamie Kuse | Mixing Engineer &amp; Producer · Dolby Atmos · Vancouver</title>
+<meta name="description" content="JUNO Award-winning mixing engineer and producer in Vancouver, known for hip-hop and Dolby Atmos. Co-founder of NOVA Studios and The Immersive Preservation Project.">
 <link rel="canonical" href="https://www.jamiekuse.com/">
 <meta property="og:site_name" content="Jamie Kuse">
-<meta property="og:title" content="Jamie Kuse | Dolby Atmos Engineer &amp; Music Producer">
+<meta property="og:title" content="Jamie Kuse | Mixing Engineer &amp; Producer · Dolby Atmos">
 <meta property="og:description" content="Multiple JUNO Award-winning engineer and producer. Co-founder of the Emmy Award-winning NOVA Studios and The Immersive Preservation Project.">
 <meta property="og:url" content="https://www.jamiekuse.com/">
 <meta property="og:type" content="profile">
@@ -17,7 +17,7 @@
 <meta property="og:image:alt" content="Jamie Kuse, multiple JUNO Award-winning engineer and producer">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://www.jamiekuse.com/og-card-2.png">
-<meta name="twitter:title" content="Jamie Kuse | Dolby Atmos Engineer &amp; Music Producer">
+<meta name="twitter:title" content="Jamie Kuse | Mixing Engineer &amp; Producer · Dolby Atmos">
 <meta name="twitter:description" content="Multiple JUNO Award-winning engineer and producer. Co-founder of NOVA Studios and The Immersive Preservation Project.">
 <script type="application/ld+json">
 {
@@ -26,9 +26,9 @@
   "@id": "https://www.jamiekuse.com/#jamie",
   "name": "Jamie Kuse",
   "url": "https://www.jamiekuse.com/",
-  "jobTitle": "Audio Engineer, Producer and Dolby Atmos Mixer",
+  "jobTitle": "Mixing Engineer and Producer",
   "email": "contact@jamiekuse.com",
-  "description": "Multiple JUNO Award-winning audio engineer and producer in Vancouver. Co-founder of the Emmy Award-winning NOVA Studios, NOVA Post and The Immersive Preservation Project. Productions have amassed over 1 billion streams worldwide.",
+  "description": "Multiple JUNO Award-winning mixing engineer and producer in Vancouver, best known for hip-hop and Dolby Atmos. Co-founder of the Emmy Award-winning NOVA Studios, NOVA Post and The Immersive Preservation Project. Productions have amassed over 1 billion streams worldwide.",
   "image": "https://www.jamiekuse.com/jamie-portrait.jpg",
   "address": {
     "@type": "PostalAddress",
@@ -37,12 +37,13 @@
     "addressCountry": "CA"
   },
   "knowsAbout": [
-    "Dolby Atmos",
+    "hip-hop mixing",
+    "rap production",
+    "Dolby Atmos mixing",
     "spatial audio",
     "immersive audio",
-    "music production",
-    "mixing",
     "mastering",
+    "vocal production",
     "audio engineering",
     "immersive installations",
     "Indigenous music",
@@ -55,9 +56,18 @@
   ],
   "founder": [
     {
-      "@type": "Organization",
+      "@type": "LocalBusiness",
+      "@id": "https://novastudios.ca/#studio",
       "name": "NOVA Studios",
-      "url": "https://novastudios.ca"
+      "url": "https://novastudios.ca/",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "340 Brooksbank Ave, Unit 220",
+        "addressLocality": "North Vancouver",
+        "addressRegion": "BC",
+        "postalCode": "V7J 2C1",
+        "addressCountry": "CA"
+      }
     },
     {
       "@type": "Organization",
@@ -66,20 +76,41 @@
     },
     {
       "@type": "Organization",
+      "@id": "https://www.ipproject.ca/#org",
       "name": "The Immersive Preservation Project",
       "url": "https://www.ipproject.ca/"
     }
   ],
   "worksFor": {
-    "@type": "Organization",
+    "@type": "LocalBusiness",
+    "@id": "https://novastudios.ca/#studio",
     "name": "NOVA Studios",
-    "url": "https://novastudios.ca"
+    "url": "https://novastudios.ca/",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "340 Brooksbank Ave, Unit 220",
+      "addressLocality": "North Vancouver",
+      "addressRegion": "BC",
+      "postalCode": "V7J 2C1",
+      "addressCountry": "CA"
+    }
   },
   "sameAs": [
+    "https://muso.ai/profile/22fb2c2a-3a27-4d6d-965a-72b6dea46aa6",
     "https://novastudios.ca",
     "https://novapost.ca",
     "https://nova-spatial.com",
     "https://www.ipproject.ca/"
+  ],
+  "hasOccupation": [
+    {
+      "@type": "Occupation",
+      "name": "Mixing engineer"
+    },
+    {
+      "@type": "Occupation",
+      "name": "Record producer"
+    }
   ]
 }
 </script>
@@ -272,6 +303,17 @@
     .portrait { flex: none; width: 70%; max-width: 260px; }
   }
 
+  /* Services */
+  .svc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .svc {
+    padding: 24px 26px; border: 1px solid var(--line); border-radius: 8px;
+    background: rgba(232, 230, 225, 0.025);
+  }
+  .svc h3 { font-family: var(--serif); font-weight: 400; font-size: 21px; line-height: 1.3; letter-spacing: 0.005em; }
+  .svc p { font-size: 14.5px; color: var(--dim); margin-top: 8px; }
+  @media (max-width: 640px) { .svc-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 560px) { .svc { padding: 18px 18px; } .svc h3 { font-size: 18px; } .svc p { font-size: 14px; } }
+
   /* Ventures */
   .section-sub {
     font-size: 15px; color: var(--dim); max-width: 54ch;
@@ -374,7 +416,7 @@
     <div class="hero-card">
     <p class="kicker">Audio Engineer &amp; Producer · Vancouver, Canada</p>
     <h1 class="wordmark"><img src="jamie-kuse-logo-web.png" alt="Jamie Kuse" onerror="this.parentNode.classList.add('no-img'); this.parentNode.innerHTML='Jamie<br>Kuse';"></h1>
-    <p class="sub">Multiple JUNO Award–winning engineer and producer with over two decades of industry experience. Co-founder of the Emmy Award–winning <a class="sub-link" href="https://novastudios.ca" target="_blank" rel="noopener">NOVA Studios</a>, one of Canada's premier Dolby Atmos facilities. <strong>1&nbsp;billion+</strong> streams worldwide.</p>
+    <p class="sub">Multiple JUNO Award–winning mixing engineer and producer, best known for hip-hop and Dolby Atmos, with over two decades of industry experience. Co-founder of the Emmy Award–winning <a class="sub-link" href="https://novastudios.ca" target="_blank" rel="noopener">NOVA Studios</a>, one of Canada's premier Dolby Atmos facilities. <strong>1&nbsp;billion+</strong> streams worldwide.</p>
     <div class="cred">
       <div class="cred-item">
         <img src="juno-statue-gold.svg" alt="JUNO Awards" title="Multiple JUNO Award winner" onerror="this.style.display='none'">
@@ -385,6 +427,7 @@
     </div>
     <div class="hero-links">
       <a href="#work">Highlights</a>
+      <a href="#services">Services</a>
       <a href="#contact">Contact</a>
     </div>
     </div>
@@ -453,11 +496,34 @@
     </div>
   </section>
 
+  <section id="services">
+    <h2>Services</h2>
+    <p class="section-sub">Based at NOVA Studios in North Vancouver, working with artists across Canada and remotely worldwide.</p>
+    <div class="svc-grid">
+      <div class="svc">
+        <h3>Hip-Hop &amp; Rap Mixing</h3>
+        <p>Mixing for rap and hip-hop artists, from the JUNO-winning <em>Red Future</em> to independent releases, in stereo and Dolby&nbsp;Atmos.</p>
+      </div>
+      <div class="svc">
+        <h3>Dolby Atmos Mixing</h3>
+        <p>Immersive mixing and mastering in NOVA Studios' 7.1.4 Atmos room, delivered as release-ready files for Apple Music, Tidal and Amazon&nbsp;Music.</p>
+      </div>
+      <div class="svc">
+        <h3>Production &amp; Recording</h3>
+        <p>Production, vocal production and recording at NOVA Studios for artists in Vancouver, the Lower Mainland and beyond.</p>
+      </div>
+      <div class="svc">
+        <h3>Installations &amp; Workshops</h3>
+        <p>Immersive audio for cultural centres and exhibits, and hands-on workshops on recording language, song and story in 3D&nbsp;sound.</p>
+      </div>
+    </div>
+  </section>
+
   <section id="about">
     <h2>About</h2>
     <div class="about-grid">
       <div class="bio">
-        <p>Jamie Kuse is an audio engineer and producer with over two decades of industry experience. His work spans commercial releases, global broadcast, and live events, from JUNO Award–winning albums to the world stage of FIFA and Valve's The International, with productions amassing over 1&nbsp;billion streams worldwide.</p>
+        <p>Jamie Kuse is an audio engineer and producer with over two decades of industry experience. His work spans commercial releases, global broadcast, and live events, from JUNO Award–winning albums to the world stage of FIFA and Valve's The International, with productions amassing over 1&nbsp;billion streams worldwide. Credits include records with Snotty Nose Rez Kids, NAV, KILLY, Tyla Yaweh, Dax, Snak The Ripper and Boslen (<a class="sub-link" href="https://muso.ai/profile/22fb2c2a-3a27-4d6d-965a-72b6dea46aa6/credits" target="_blank" rel="noopener">full credits</a>).</p>
         <p>He is the co-founder of the Emmy Award–winning <strong>NOVA Studios</strong>, one of Canada's premier Dolby Atmos facilities; <strong>NOVA Post</strong>, whose client roster spans Google, Nintendo, Valve, and Porsche; and <em>The Immersive Preservation Project</em>, which records Indigenous language, song and story in immersive sound with communities across Canada.</p>
         <p>His focus today is Dolby Atmos: immersive mixes for artists and labels, immersive audio for cultural centres and exhibits, and hands-on workshops where communities hear, record and keep immersive audio of their own.</p>
       </div>
